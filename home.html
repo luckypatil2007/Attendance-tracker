@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Attendance Tracker</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="bg-grid"></div>
+
+  <div class="card">
+
+    <div class="card-header">
+      <div class="badge">SEMESTER TOOL</div>
+      <h1 class="title">Attendance<br/><span>Tracker</span></h1>
+      <p class="subtitle">Check your 75% standing &amp; plan ahead</p>
+    </div>
+
+    <div class="inputs">
+
+      <div class="input-group">
+        <label for="totalClasses">Total Classes Held</label>
+        <input
+          type="number"
+          id="totalClasses"
+          placeholder="e.g. 40"
+          min="1"
+        />
+        <span class="hint">Classes conducted so far</span>
+      </div>
+
+      <div class="input-group">
+        <label for="attendedClasses">Classes Attended</label>
+        <input
+          type="number"
+          id="attendedClasses"
+          placeholder="e.g. 28"
+          min="0"
+        />
+        <span class="hint">How many you were present for</span>
+      </div>
+
+      <div class="input-group">
+        <label for="remainingClasses">Remaining Classes</label>
+        <input
+          type="number"
+          id="remainingClasses"
+          placeholder="e.g. 20"
+          min="0"
+        />
+        <span class="hint">Classes yet to be held this semester</span>
+      </div>
+
+    </div>
+
+    <button id="checkBtn">Check Attendance →</button>
+
+    <div id="result" class="result hidden">
+    </div>
+
+    <div class="formula-box">
+      <p class="formula-title">📐 How the formula works</p>
+      <code>needed = ⌈(0.75 × total − attended) / 0.25⌉</code>
+      <p class="formula-desc">
+        We find how many classes are still "missing" to hit 75%, then divide by
+        0.25 because each new class you attend raises your percentage by
+        <strong>1/(total+1)</strong> — the ceiling (⌈⌉) rounds up to a whole number.
+      </p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

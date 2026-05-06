@@ -9,7 +9,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
   }
 
   if (!email.includes("@") || !email.includes(".com")) {
-    showResult("low", "❌ Enter a valid email (must include @ and .com)");
+    showResult("low", "❌ Enter a valid email ID");
     return;
   }
 

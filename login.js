@@ -8,7 +8,11 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     return;
   }
 
-  // Accept any email & password
+  if (!email.includes("@") || !email.includes(".com")) {
+    showResult("low", "❌ Enter a valid email (must include @ and .com)");
+    return;
+  }
+
   showResult("good", "✅ Login successful! Redirecting...");
 
   setTimeout(() => {

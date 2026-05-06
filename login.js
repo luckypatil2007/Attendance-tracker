@@ -8,17 +8,12 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     return;
   }
 
+  // Accept any email & password
+  showResult("good", "✅ Login successful! Redirecting...");
 
-  if (email === "admin@gmail.com" && password === "123456") {
-    showResult("good", "✅ Login successful! Redirecting...");
-    
-    setTimeout(() => {
-      window.location.href = "home.html";
-    }, 1200);
-
-  } else {
-    showResult("low", "❌ Invalid email or password");
-  }
+  setTimeout(() => {
+    window.location.href = "home.html";
+  }, 1200);
 
   function showResult(type, message) {
     result.classList.remove("hidden", "good", "low");
